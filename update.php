@@ -3,7 +3,8 @@ include 'connect.php';
 
 $id = $_GET['update_id'];
 
-// Fetch existing record
+
+//fetching existing record from table
 $sql = "SELECT * FROM `student_record` WHERE id=$id";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
@@ -23,7 +24,7 @@ if (isset($_POST['submit'])) {
 
     if ($result) {
         
-         header('location:display.php');
+         header('location:display.php');  
     } else {
         die("Update failed: " . mysqli_error($conn));
     }
